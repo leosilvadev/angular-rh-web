@@ -1,0 +1,12 @@
+<div class="col-sm-3 well card" ng-click="clicking()">
+  <div>
+    <img-container url="{{employee.image}}" title="{{employee.name}}">
+  </div>
+  <div class="title">{{employee.name}}</div>
+  <div class="details">
+    <div>{{employee.age}} anos</div>
+    <div>{{employee.job}}</div>
+    <div>{{employee.status}}</div>
+    <div>{{employee.salary | currency}}</div>
+  </div>
+</div>

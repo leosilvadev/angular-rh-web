@@ -1,60 +1,16 @@
 <section>
   <div class="row">
-    <div class="well col-sm-12">
-      <table class="table table-hover table-bordered">
-        <thead>
-          <tr>
-            <th colspan="8">
-              <div class="form-group">
-                <div class="input-group" style="width: 100%;">
-                  <div class="input-group-addon">
-                    <span class="glyphicon glyphicon-search"></span> Pesquisar
-                  </div>
-                  <input class="form-control" ng-model="searchByName">
-                </div>
-              </div>
-            </th>
-          </td>
-          <tr>
-            <th style="width:5%">Id</th>
-            <th style="width:25%">Name</th>
-            <th style="width:5%">Age</th>
-            <th style="width:15%">Job</th>
-            <th style="width:10%">Status</th>
-            <th style="width:10%">Salary</th>
-            <th>Foto</th>
-            <th style="width:10%"></th>
-            <th style="width:10%"></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr ng-repeat="emp in employees | filter:searchByName">
-            <td>{{emp.id}}</td>
-            <td>{{emp.name}}</td>
-            <td>{{emp.age}}</td>
-            <td>{{emp.job}}</td>
-            <td>{{emp.status}}</td>
-            <td>{{emp.salary | currency}}</td>
-            <td>
-              <img-container url="{{emp.image}}"
-                title="{{emp.name}}">
-              </img-container>
-            </td>
-            <td>
-              <a class="btn btn-warning" href="/#/employees/edit/{{emp.id}}">Editar</a>
-            </td>
-            <td>
-              <button type="button"
-              class="btn btn-danger"
-              ng-click="fire(emp.id)">Demitir!
-            </button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="col-sm-12">
+      <section>
+        <div class="row">
+          <div ng-repeat="emp in employees | filter:searchByName">
+            <emp-card employee="emp"></emp-card>
+          </div>
+        </div>
+        </div>
+      </section>
   </div>
 </div>
-
 
 <div class="row">
   <div class="well col-sm-12">
