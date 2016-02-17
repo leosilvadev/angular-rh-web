@@ -1,0 +1,45 @@
+<section>
+  <form novalidate name="registrationForm" ng-submit="save(employee)">
+    <div ng-show="registrationForm.$dirty">
+      <div class="alert alert-warning"
+        ng-show="registrationForm.name.$dirty && registrationForm.name.$error.required">
+        Insira o nome do Funcionário corretamente
+      </div>
+      <div class="alert alert-warning"
+        ng-show="registrationForm.age.$dirty && registrationForm.age.$error.required">
+        Insira a idade do Funcionário corretamente
+      </div>
+      <div class="alert alert-warning"
+        ng-show="registrationForm.salary.$dirty &&registrationForm.salary.$error.required">
+        Insira o salário do Funcionário corretamente
+      </div>
+    </div>
+    <div class="row well">
+      <div class="col-sm-4">
+        <label for="name">Name: </label>
+        <input id="name" name="name" ng-model="employee.name" class="form-control" ng-required="true">
+      </div>
+      <div class="col-sm-4">
+        <label for="age">Age:</label>
+        <input id="age" name="age" ng-model="employee.age" type="number" class="form-control"
+        ng-required="true" min="1" max="100">
+      </div>
+      <div class="col-sm-4">
+        <label for="salary">Salary:</label>
+        <input id="salary" name="salary" ng-model="employee.salary" class="form-control" ng-required="true"
+        ui-number-mask>
+      </div>
+
+
+      <div class="col-sm-12">
+        <label for="image">Image URL:</label>
+        <input id="image" name="image" ng-model="employee.image" class="form-control" ng-required="true">
+      </div>
+    </div>
+    <div class="row well">
+      <div class="col-sm-2">
+        <button type="submit" class="btn btn-primary" ng-disabled="registrationForm.$invalid">Hire</button>
+      </div>
+    </div>
+  </form>
+</section>
